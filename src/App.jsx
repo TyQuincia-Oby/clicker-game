@@ -3,11 +3,19 @@ import './App.css'
 
 function App() {
   const [score, setScore] = useState(0)
+  const [lives, setLives] = useState(3)
 
-  function clickTarget(){
+  function clickTarget(event){
+    console.log("Apple clicked")
     setScore(score + 1);
-    {/*clickTarget.stopPropagation(); -make sure this is correct, then uncomment*/} 
-  
+    event.stopPropagation();
+  }
+
+  function missTarget(){
+    console.log("Background clicked")
+    setLives(lives - 1);
+
+    
   }
 
   return (
@@ -15,10 +23,10 @@ function App() {
       <div className="full-page">
         <div className="stats">
           <h1>Let's Get Pickin'!!</h1>
-          
           <p>Score: {score} </p>
+          <p>Lives: {lives} </p>
         </div>
-        <div className="orchard-background">
+        <div className="orchard-background" onClick={missTarget}>
           <div className="apple-target" onClick={clickTarget}>
 
           </div>
