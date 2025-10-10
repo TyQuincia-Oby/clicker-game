@@ -1,0 +1,16 @@
+.orchard-background{
+    position: relative;
+    background-image: url("/orchard.png");
+    height: 700px;
+    width: 500px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.apple-target{
+    position: absolute;
+    background-image: url("/apple.png");
+    height: 50px;
+    width: 50px;
+    background-size: contain;
+}

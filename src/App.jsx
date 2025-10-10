@@ -8,7 +8,11 @@ function App() {
     <>
       <div>
         <h1>Let's Get Pickin'!!</h1>
-
+        <div className="orchard-background">
+          <div className="apple-target">
+            
+          </div>
+        </div>
       </div>
     </>
   )
