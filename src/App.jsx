@@ -24,6 +24,7 @@ function App() {
     event.stopPropagation();
     randomSize();
     randomSpot();
+    
   }
 
   function missTarget(){
@@ -46,18 +47,34 @@ function App() {
     setAppleY(appleY);
   }
 
+ const statsStyle = {
+    color: "whitesmoke",
+    textAlign: "center",
+    fontFamily: "Courier New, Courier, monospace",
+    padding: "20px",
+    borderRadius: "20px",
+    
+  }
+
+  if (score <= 9){ 
+    statsStyle.backgroundColor = "tomato";
+  } else if (score <= 20){
+    statsStyle.backgroundColor="green";
+  } else if (score <= 30){
+    statsStyle.backgroundColor="gold"
+  }  
+  
+  
   return (
     <>
       <div className="full-page">
-        <div className="stats">
+        <div className="stats" style={statsStyle}>
           <h1>Let's Get Pickin'!!</h1>
           <p>Score: {score} </p>
           <p>Lives: {lives} </p>
         </div>
         <div className="orchard-background" onClick={missTarget}>
-          <div className="apple-target" onClick={clickTarget} style={appleStyle}>
-
-          </div>
+          <div className="apple-target" onClick={clickTarget} style={appleStyle}></div>
         </div>
       </div>
     </>
