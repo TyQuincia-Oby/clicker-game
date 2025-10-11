@@ -59,11 +59,20 @@ function App() {
   if (score <= 9){ 
     statsStyle.backgroundColor = "tomato";
   } else if (score <= 20){
-    statsStyle.backgroundColor="green";
+    statsStyle.backgroundColor="lightgreen";
   } else if (score <= 30){
     statsStyle.backgroundColor="gold"
+  } else if (score <= 40){
+    statsStyle.backgroundColor="tan"
+  } else if (score <= 50){
+    statsStyle.backgroundColor="darkorange"
+  }  else if (score <= 60){
+    statsStyle.backgroundColor="darkgreen"
+  }  else if (score <= 70){
+    statsStyle.backgroundColor="darkred"
   }  
-  
+    
+  const motivate = (score >= 100 ? <h3 className="win">YOU WIN!!</h3>: <h3 className="win">KEEP CLICKING!!</h3>)
   
   return (
     <>
@@ -72,9 +81,11 @@ function App() {
           <h1>Let's Get Pickin'!!</h1>
           <p>Score: {score} </p>
           <p>Lives: {lives} </p>
+          
         </div>
         <div className="orchard-background" onClick={missTarget}>
           <div className="apple-target" onClick={clickTarget} style={appleStyle}></div>
+          <div>{motivate}</div>
         </div>
       </div>
     </>

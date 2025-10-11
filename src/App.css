@@ -29,16 +29,18 @@
     
 }
 
-.stats{
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
-    padding: 20px;
-}
-
 .full-page{
     background-color: goldenrod;
     padding: 30px;
     margin: 15px;
     border-radius: 20px;
+}
+
+.win{
+   position: absolute;
+   background-color: brown;
+   color: whitesmoke;
+   left: 40%;
+   top: 50%;
+   
 }
