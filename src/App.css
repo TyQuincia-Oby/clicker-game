@@ -38,10 +38,11 @@
 
 .win{
    position: absolute;
-   background-color: brown;
-   color: whitesmoke;
+   background-color: chartreuse;
+   color: tomato;
    left: 40%;
    top: 50%;
    font-family: Courier New, Courier, monospace;
-   
+   border-radius: 24px;
+   padding: 10px;   
 }
