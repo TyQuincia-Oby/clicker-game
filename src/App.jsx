@@ -5,6 +5,11 @@ function randomNumber(a,b){
   return Math.floor(Math.random() * (b-a) + a);
 }
 
+function GameBoard({children, onMiss}) {
+  return(
+    <div className="orchard-background" onClick={onMiss}>{children}</div>
+  )
+}
 
 function Stats({score, lives, style}){
     return(
@@ -87,12 +92,12 @@ function App() {
     <>
       <div className="full-page">
         <Stats score={score} lives={lives} style={statsStyle} />
-        <div className="orchard-background" onClick={missTarget}>
+        <GameBoard onMiss={missTarget}>
           { score < 50 ? 
             <div className="apple-target" onClick={clickTarget} style={appleStyle}></div>
             : <h3 className="win">YOU WIN!!</h3>
           }
-        </div>
+        </GameBoard>
       </div>
     </>
   )
