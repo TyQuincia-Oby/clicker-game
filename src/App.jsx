@@ -5,6 +5,17 @@ function randomNumber(a,b){
   return Math.floor(Math.random() * (b-a) + a);
 }
 
+
+function Stats({score, lives, style}){
+    return(
+       <div className="stats" style={style}>
+          <h1>Let's Get Pickin'!!</h1>
+          <p>Score: {score} </p>
+          <p>Lives: {lives} </p>
+        </div>
+    );
+} 
+
 function App() {
   const [score, setScore] = useState(0)
   const [lives, setLives] = useState(3)
@@ -16,6 +27,13 @@ function App() {
     height: appleSize + "px",
     left: appleX + "px",
     top: appleY + "px" 
+  }
+    const statsStyle = {
+    color: "whitesmoke",
+    textAlign: "center",
+    fontFamily: "Courier New, Courier, monospace",
+    padding: "20px",
+    borderRadius: "20px"
   }
 
   function clickTarget(event){
@@ -47,15 +65,8 @@ function App() {
     setAppleY(appleY);
   }
 
- const statsStyle = {
-    color: "whitesmoke",
-    textAlign: "center",
-    fontFamily: "Courier New, Courier, monospace",
-    padding: "20px",
-    borderRadius: "20px",
-    
-  }
 
+ 
   if (score <= 5){ 
     statsStyle.backgroundColor = "tomato";
   } else if (score <= 10){
@@ -75,12 +86,7 @@ function App() {
   return (
     <>
       <div className="full-page">
-        <div className="stats" style={statsStyle}>
-          <h1>Let's Get Pickin'!!</h1>
-          <p>Score: {score} </p>
-          <p>Lives: {lives} </p>
-          
-        </div>
+        <Stats score={score} lives={lives} style={statsStyle} />
         <div className="orchard-background" onClick={missTarget}>
           { score < 50 ? 
             <div className="apple-target" onClick={clickTarget} style={appleStyle}></div>
