@@ -41,12 +41,29 @@ function App() {
     borderRadius: "20px"
   }
 
+  const gameOverStyle = {
+    color: "red",
+    textAlign: "center",
+    fontFamily: "Courier New, Courier, monospace",
+    padding: "20px",
+    borderRadius: "20px",
+    backgroundColor: "black",
+    width: "600px",
+    height: "200px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    
+  }
+
+
   function clickTarget(event){
     console.log("Apple clicked")
     setScore(score + 1);
     event.stopPropagation();
     randomSize();
     randomSpot();
+    
     
   }
 
@@ -87,17 +104,27 @@ function App() {
   }  else if (score <= 35){
     statsStyle.backgroundColor="darkred"
   }  
+
+  function handleReset(){
+    setScore(0);
+    setLives(3);
+  }
+
   
   return (
     <>
       <div className="full-page">
         <Stats score={score} lives={lives} style={statsStyle} />
+        
         <GameBoard onMiss={missTarget}>
-          { score < 50 ? 
-            <div className="apple-target" onClick={clickTarget} style={appleStyle}></div>
-            : <h3 className="win">YOU WIN!!</h3>
-          }
-        </GameBoard>
+          { score >= 50 && <h3 className="win">YOU WIN!!</h3>}
+          { lives <= 0 && <h1 style={gameOverStyle}>YOU LOSE!!</h1>}
+          { lives > 0 && score < 50 && (
+          <div className="apple-target" onClick={clickTarget} style={appleStyle}></div>
+          )}
+          </GameBoard>
+
+          <button className="resetBtn" onClick={handleReset}>Reset</button>
       </div>
     </>
   )
