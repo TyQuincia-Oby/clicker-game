@@ -1,7 +1,12 @@
 # Let's Get Pickin'!! (Apple Picker Game)
 
 ## Features Included:
- 
+- Dynamic apple sizing and positioning
+- Score and lives tracking
+- Progressive color changes based on score
+- Win condition at 100 points
+- Responsive click interactions
+
 
 ## Technologies
 - React 19
@@ -43,3 +48,12 @@ User picks (clicks) golden apple on screen; Upon picking, apple changes size and
 - Random number generation
 
 - CSS positioning (absolute/relative)
+
+## Future Enhancements
+- Add sound effects
+- Track high score with localStorage
+- Add difficulty levels
+- Add timer/countdown mode
+
+## Author
+TyQuincia R. Oby
