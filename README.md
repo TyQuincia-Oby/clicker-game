@@ -1,16 +1,45 @@
-# React + Vite
+# Let's Get Pickin'!! (Apple Picker Game)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features Included:
+ 
 
-Currently, two official plugins are available:
+## Technologies
+- React 19
+- Vite
+- CSS
+- JavaScript ES6+
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
+bash 
+run command: npm install
 
-## React Compiler
+## Running the Game
+run command: npm run dev
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Playing the Game 
+User picks (clicks) golden apple on screen; Upon picking, apple changes size and random location. At intervals, background color of stats screen changes color. Player wins when "You Win!!" pops on screen and apple disappears. Player loses when "You Lose!!" pops up and apple disappears again. Reset button restarts lives and points to initial values.
 
-## Expanding the ESLint configuration
+## Game Mechanics
+- Score increases by 1 when golden apple is clicked (starts at 0)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Lives decrease by 1 when the backgroudn is clicked (starts at 3)
+
+- Apple Size changes randomly between 20-100 pixels
+
+- Apple position changes randomly within gameboard 
+
+- When score reaches 50 points, user wins
+
+## What I Learned
+
+- React useState hook for state management
+
+- Event handling and propagation
+
+- Dynamic inline styling with JavaScript
+
+- Conditional rendering with ternary operators
+
+- Random number generation
+
+- CSS positioning (absolute/relative)
